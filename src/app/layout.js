@@ -1,7 +1,16 @@
+import { Suspense } from "react";
 import { Inter } from "next/font/google";
+
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
+// This component passed as a fallback to the Suspense boundary
+// will be rendered in place of the search bar in the initial HTML.
+// When the value is available during React hydration the fallback
+// will be replaced with the `<SearchBar>` component.
+function SearchBarFallback() {
+  return <>placeholder</>;
+}
 
 export const metadata = {
   title: "Create Next App",
@@ -11,7 +20,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <Suspense fallback={<SearchBarFallback />}>{children}</Suspense>
+      </body>
     </html>
   );
 }
