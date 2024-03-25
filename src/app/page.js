@@ -1,4 +1,10 @@
+"use client";
+import { useSearchParams } from "next/navigation";
+
 export default function Home() {
+  const searchParams = useSearchParams();
+  const auth0_domain = searchParams.get("auth0_domain");
+  console.log(auth0_domain);
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-24">
       <form action="" className="flex flex-col gap-4">
@@ -13,6 +19,7 @@ export default function Home() {
           Submit
         </button>
       </form>
+      <div>auth0_domain: {auth0_domain}</div>
     </main>
   );
 }
