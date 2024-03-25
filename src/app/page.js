@@ -3,9 +3,9 @@ import { useSearchParams } from "next/navigation";
 
 export default function Home() {
   const searchParams = useSearchParams();
-  let auth0_domain = searchParams.get("auth0_domain");
-  console.log("sent from autho auth0_domain", auth0_domain);
-  auth0_domain = "d74rdvlpg8gop1id.us.auth0.com";
+  const auth0_domain = searchParams.get("auth0_domain");
+  // console.log("sent from autho auth0_domain", auth0_domain);
+  // auth0_domain = "d74rdvlpg8gop1id.us.auth0.com";
   const state = searchParams.get("state");
   //dev-d74rdvlpg8gop1id.us.auth0.com
   const action = `http://${auth0_domain}?state=${state}`;
