@@ -3,11 +3,13 @@ import { useSearchParams } from "next/navigation";
 
 export default function Home() {
   const searchParams = useSearchParams();
-  const auth0_domain = searchParams.get("auth0_domain");
+  let auth0_domain = searchParams.get("auth0_domain");
+  console.log("sent from autho auth0_domain", auth0_domain);
+  auth0_domain = "d74rdvlpg8gop1id.us.auth0.com";
   const state = searchParams.get("state");
-
-  const action = `https://${auth0_domain}/continue?state=${state}`;
-
+  //dev-d74rdvlpg8gop1id.us.auth0.com
+  const action = `http://${auth0_domain}?state=${state}`;
+  console.log("action", action);
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-24">
       <form action={action} className="flex flex-col gap-4">
@@ -24,6 +26,7 @@ export default function Home() {
       </form>
       <div>auth0_domain: {auth0_domain}</div>
       <div>state: {state}</div>
+      <div>action: {action}</div>
     </main>
   );
 }
