@@ -9,7 +9,7 @@ export default function Home() {
   // auth0_domain = "d74rdvlpg8gop1id.us.auth0.com";
 
   //dev-d74rdvlpg8gop1id.us.auth0.com
-  const action = `http://${auth0_domain}?state=${state}`;
+  const action = `https://${auth0_domain}?state=${state}`;
   console.log("auth0_domain", auth0_domain);
   console.log("state", state);
   console.log("action", action);
