@@ -4,11 +4,14 @@ import { useSearchParams } from "next/navigation";
 export default function Home() {
   const searchParams = useSearchParams();
   const auth0_domain = searchParams.get("auth0_domain");
+  const state = searchParams.get("state");
   // console.log("sent from autho auth0_domain", auth0_domain);
   // auth0_domain = "d74rdvlpg8gop1id.us.auth0.com";
-  const state = searchParams.get("state");
+
   //dev-d74rdvlpg8gop1id.us.auth0.com
   const action = `http://${auth0_domain}?state=${state}`;
+  console.log("auth0_domain", auth0_domain);
+  console.log("state", state);
   console.log("action", action);
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-24">
@@ -25,6 +28,7 @@ export default function Home() {
         </button>
       </form>
       <div>auth0_domain: {auth0_domain}</div>
+      https://{auth0_domain}/continue?state={state}
       <div>state: {state}</div>
       <div>action: {action}</div>
     </main>
