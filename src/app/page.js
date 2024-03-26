@@ -9,7 +9,7 @@ export default function Home() {
   // auth0_domain = "d74rdvlpg8gop1id.us.auth0.com";
 
   //dev-d74rdvlpg8gop1id.us.auth0.com
-  const action = `https://${auth0_domain}?state=${state}`;
+  const action = `${auth0_domain}?state=${state}`;
   console.log("auth0_domain", auth0_domain);
   console.log("state", state);
   console.log("action", action);
@@ -27,10 +27,6 @@ export default function Home() {
           Submit
         </button>
       </form>
-      <div>auth0_domain: {auth0_domain}</div>
-      https://{auth0_domain}/continue?state={state}
-      <div>state: {state}</div>
-      <div>action: {action}</div>
     </main>
   );
 }
