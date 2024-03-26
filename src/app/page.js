@@ -15,10 +15,10 @@ export default function Home() {
   console.log("action", action);
   return (
     <main className="flex flex-col items-center justify-between min-h-screen p-24">
-      <form action={action} className="flex flex-col gap-4">
+      <form action={action} method="post" className="flex flex-col gap-4">
         <label htmlFor="consent" className="flex gap-2">
           I consent
-          <input type="checkbox" />
+          <input type="checkbox" name="consent" />
         </label>
         <button
           type="submit"
