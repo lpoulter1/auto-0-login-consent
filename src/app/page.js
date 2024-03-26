@@ -18,7 +18,7 @@ export default function Home() {
       <form action={action} method="post" className="flex flex-col gap-4">
         <label htmlFor="consent" className="flex gap-2">
           I consent
-          <input type="checkbox" name="consent" />
+          <input type="checkbox" name="consent" value="yes" />
         </label>
         <button
           type="submit"
